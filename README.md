@@ -1,27 +1,60 @@
-# AngularTask
+# Angular Login & Registration Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+This is a simple Angular application with a login page, registration page, and a home page. The application includes form validation, user registration, and authentication functionalities. The home page displays a personalized welcome message after successful login.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Login Page**: 
+  - Email and password validation.
+  - Displays error messages for invalid email or short password.
+  
+- **Registration Page**: 
+  - Requires a username, email, password, and confirm password.
+  - Validates that the password is at least 8 characters long and that the confirm password matches the password.
+  - Registers the user and stores the details in memory.
 
-## Code scaffolding
+- **Home Page**: 
+  - Displays a welcome message with the registered user's username after a successful login.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project Structure
 
-## Build
+src/ app/ components/ login/ login.component.ts login.component.html login.component.css 
+registration/ registration.component.ts registration.component.html registration.component.css 
+home/ home.component.ts home.component.html home.component.css 
+services/ auth.service.ts 
+app-routing.module.ts app.module.ts assets/ environments/ README.md
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+Follow these steps to set up the application:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
+   git clone https://github.com/your-repository/angular-login-registration.git
+   cd angular-login-registration
+Install dependencies:
+npm install
+Run the application:
+ng serve
+Open the browser and visit http://localhost:4200.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+How to Use
+1. Register a User
+Navigate to the registration page by clicking the Register button.
+Fill in the details for Username, Email, Password, and Confirm Password.
+Ensure the password is at least 8 characters long and the confirm password matches the original password.
+Submit the registration form.
+2. Login with Registered User
+Navigate to the login page by clicking the Login button.
+Enter the registered email and password.
+If valid, you will be redirected to the home page, where a personalized welcome message will be displayed.
+3. Home Page
+After a successful login, the home page will display a "Welcome {UserName}" message.
+Technologies Used
+Angular: Frontend framework for building dynamic and responsive web applications.
+Reactive Forms: Angular’s approach to handling forms with validation.
+Routing: Angular's routing system to navigate between login, registration, and home pages.
+Notes
+This application uses a simple AuthService to manage user registration and authentication, storing user details in memory.
+For production use, consider using a backend service to store user data securely and handle authentication.
