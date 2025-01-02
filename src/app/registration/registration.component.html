@@ -23,7 +23,7 @@
     <div>
       <label>Confirm Password:</label>
       <input formControlName="confirmPassword" type="password">
-      <div *ngIf="registrationForm.get('confirmPassword')?.invalid && registrationForm.get('confirmPassword')?.touched">
+      <div *ngIf="registrationForm.hasError('passwordMismatch') && registrationForm.get('confirmPassword')?.touched">
         Passwords must match.
       </div>
     </div>
